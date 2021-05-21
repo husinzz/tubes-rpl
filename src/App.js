@@ -5,14 +5,15 @@ import "./App.css";
 
 // Components
 import Navigation from "./component/navigation.component";
-import { Dashboard } from "./component/dashboard.component";
-// import {Form} from './component/forms.component';
+import { Dashboard, AdminDashboard } from "./component/dashboard.component";
+import { Blog } from "./component/blog.component";
 
 function App() {
   return (
     <Router>
       <Navigation />
-      <Dashboard />
+      {/* <Route path="/" exact component={Dashboard} /> */}
+      <AdminDashboard />
     </Router>
   );
 }

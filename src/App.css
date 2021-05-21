@@ -7,3 +7,7 @@
   width:800px;
   /* height:360px; */
 }
+
+.article-box {
+  min-height: 200px;
+}
