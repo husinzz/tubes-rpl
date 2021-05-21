@@ -1,11 +1,15 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-export default class Card extends React.Component {
+class Card extends React.Component {
   render() {
     return (
       <div className="card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1d/No_image.svg" className="card-img-top" alt="..." />
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/1/1d/No_image.svg"
+          className="card-img-top"
+          alt="..."
+        />
         <div className="card-body">
           <h5 className="card-title">Card title</h5>
           <p className="card-text">
@@ -20,3 +24,34 @@ export default class Card extends React.Component {
     );
   }
 }
+
+class CardGrid extends React.Component {
+  render() {
+    return (
+      <div className="container">
+        <div className="row w-100">
+          <div className="col-md-4 col-sm-12 py-2">
+            <Card />
+          </div>
+          <div className="col-md-4 col-sm-12 py-2">
+            <Card />
+          </div>
+          <div className="col-md-4 col-sm-12 py-2">
+            <Card />
+          </div>
+          <div className="col-md-4 col-sm-12 py-2">
+            <Card />
+          </div>
+          <div className="col-md-4 col-sm-12 py-2">
+            <Card />
+          </div>
+          <div className="col-md-4 col-sm-12 py-2">
+            <Card />
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+
+export { Card, CardGrid };

@@ -1,21 +1,18 @@
-import React from 'react';
-import {BrowserRouter as Router,Route} from 'react-router-dom';
+import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css"
+import "./App.css";
 
 // Components
 import Navigation from "./component/navigation.component";
-import TopDashboard from './component/top-dashboard.component';
-import CardGrid1 from './component/card-grid1.component';
+import { Dashboard } from "./component/dashboard.component";
+// import {Form} from './component/forms.component';
 
 function App() {
   return (
     <Router>
       <Navigation />
-      <TopDashboard />
-      <div className="">
-        <CardGrid1 />        
-      </div>
+      <Dashboard />
     </Router>
   );
 }
