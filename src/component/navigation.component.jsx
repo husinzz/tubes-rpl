@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 // Component
-import Search from "./search.component";
+import { Search } from "./search.component";
 
 export default class Navigation extends React.Component {
   render() {

@@ -6,7 +6,7 @@ class Card extends React.Component {
     return (
       <div className="card">
         <img
-          src="https://upload.wikimedia.org/wikipedia/commons/1/1d/No_image.svg"
+          src="https://placeholder.pics/svg/340x250/DEDEDE/555555/This%20is%20an%20image"
           className="card-img-top"
           alt="..."
         />

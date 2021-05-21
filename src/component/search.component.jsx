@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-export default class Search extends React.Component {
+class Search extends React.Component {
   render() {
     return (
       <form className="d-flex">
@@ -18,3 +18,5 @@ export default class Search extends React.Component {
     );
   }
 }
+
+export { Search };

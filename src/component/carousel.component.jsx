@@ -34,7 +34,7 @@ export default class Carousel extends React.Component {
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img
-              src="https://i.imgur.com/TmhKNAK.jpg"
+              src="https://placeholder.pics/svg/800x450/DEDEDE/555555/This%20is%20an%20image"
               class="d-block w-100"
               alt="..."
             />
@@ -47,7 +47,7 @@ export default class Carousel extends React.Component {
           </div>
           <div class="carousel-item">
             <img
-              src="https://upload.wikimedia.org/wikipedia/commons/1/1d/No_image.svg"
+              src="https://placeholder.pics/svg/800x450/DEDEDE/555555/This%20is%20an%20image"
               class="d-block w-100"
               alt="..."
             />
