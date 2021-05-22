@@ -13,7 +13,6 @@ function App() {
     <Router>
       <Navigation />
       {/* <Route path="/" exact component={Dashboard} /> */}
-      <AdminDashboard />
     </Router>
   );
 }
