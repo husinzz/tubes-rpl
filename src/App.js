@@ -5,8 +5,7 @@ import "./App.css";
 
 // Components
 import Navigation from "./component/navigation.component";
-import { Dashboard, AdminDashboard } from "./component/dashboard.component";
-import { Blog } from "./component/blog.component";
+import { Dashboard } from "./component/dashboard.component";
 
 function App() {
   return (
