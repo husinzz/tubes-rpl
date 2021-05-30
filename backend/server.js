@@ -11,15 +11,17 @@ const uri = process.env.uri;
 app.use(cors());
 app.use(express.json());
 
-mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology : true });
+mongoose.connect(uri, {
+  useNewUrlParser: true,
+  useCreateIndex: true,
+  useUnifiedTopology: true,
+});
 const connection = mongoose.connection;
 connection.once("open", () => {
   console.log("MongoDB database connection established successfully");
 });
 
-
-app.use('/', require('./route/blog'))
-
+app.use("/", require("./route/blog"));
 
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);

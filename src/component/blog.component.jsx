@@ -14,7 +14,7 @@ class Blog extends React.Component {
     };
   }
 
-  async componentDidMount() {
+  componentDidMount() {
     axios
       .get("http://localhost:8080/blog/" + this.props.match.params.id)
       .then((res) => {

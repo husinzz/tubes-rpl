@@ -12,7 +12,7 @@ function App() {
   return (
     <Router>
       <Navigation />
-      {/* <Route path="/" exact component={Dashboard} /> */}
+      <Route path="/" exact component={Dashboard} />
       <Route path="/blog/:id" component={Blog} />
     </Router>
   );

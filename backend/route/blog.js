@@ -10,8 +10,7 @@ router.route("/").get((req, res) => {
 router.route("/add").post((req, res) => {
   const title = req.body.title;
   const writing = req.body.writing;
-  const date = Date.parse(new Date())
-
+  const date = Date.parse(new Date());
 
   const newArticle = new Article({
     title,
