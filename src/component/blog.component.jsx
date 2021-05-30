@@ -31,7 +31,7 @@ class Blog extends React.Component {
     return (
       <div className="container mt-5">
         <h1>{this.state.article.title}</h1>
-        <p>Created : {this.state.article.date} </p>
+        <p>Created : {this.state.article.date.substring(0, 10)} </p>
         <div className="border border-dark article-box">
           <p className="px-3 py-1 ">{this.state.article.writing}</p>
         </div>

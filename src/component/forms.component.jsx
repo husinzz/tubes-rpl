@@ -6,19 +6,6 @@ class Form extends React.Component {
       <div className="container">
         <form>
           <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">
-              Title
-            </label>
-            <input
-              type="text"
-              class="form-control"
-              id="exampleFormControlInput1"
-            />
-          </div>
-          <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">
-              Tags
-            </label>
             <input
               type="text"
               class="form-control"

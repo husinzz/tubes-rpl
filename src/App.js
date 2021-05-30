@@ -7,6 +7,7 @@ import "./App.css";
 import Navigation from "./component/navigation.component";
 import { Dashboard } from "./component/dashboard.component";
 import { Blog } from "./component/blog.component";
+import { Add } from "./component/add.component";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Navigation />
       <Route path="/" exact component={Dashboard} />
       <Route path="/blog/:id" component={Blog} />
+      <Route path="/add" component={Add} />
     </Router>
   );
 }
