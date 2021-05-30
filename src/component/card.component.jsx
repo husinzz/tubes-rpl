@@ -33,21 +33,6 @@ class CardGrid extends React.Component {
           <div className="col-md-4 col-sm-12 py-2">
             <Card />
           </div>
-          <div className="col-md-4 col-sm-12 py-2">
-            <Card />
-          </div>
-          <div className="col-md-4 col-sm-12 py-2">
-            <Card />
-          </div>
-          <div className="col-md-4 col-sm-12 py-2">
-            <Card />
-          </div>
-          <div className="col-md-4 col-sm-12 py-2">
-            <Card />
-          </div>
-          <div className="col-md-4 col-sm-12 py-2">
-            <Card />
-          </div>
         </div>
       </div>
     );

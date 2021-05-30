@@ -1,14 +1,39 @@
 import React, { Component } from "react";
 import { CardGrid } from "./card.component";
+import axios from "axios";
 
 class Blog extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      article: {
+        title: "",
+        writing: "",
+        date: "",
+      },
+    };
+  }
+
+  async componentDidMount() {
+    axios
+      .get("http://localhost:8080/blog/" + this.props.match.params.id)
+      .then((res) => {
+        this.setState({
+          article: res.data,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
   render() {
     return (
       <div className="container mt-5">
-        <h1>Title</h1>
-        <p>Created : May 21 2021, 01:39 AM </p>
+        <h1>{this.state.article.title}</h1>
+        <p>Created : {this.state.article.date} </p>
         <div className="border border-dark article-box">
-          <p className="px-3 py-1 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis recusandae officia, ad rerum id natus ea. Ab nam, deleniti quidem, dolore ad, blanditiis odit natus ratione et repudiandae nemo perferendis!</p>
+          <p className="px-3 py-1 ">{this.state.article.writing}</p>
         </div>
         <hr></hr>
         <h3>More articles</h3>

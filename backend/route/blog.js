@@ -9,15 +9,14 @@ router.route("/").get((req, res) => {
 
 router.route("/add").post((req, res) => {
   const title = req.body.title;
-  const tags = req.body.tags;
   const writing = req.body.writing;
-  // const date = Date.parse(req.body.date);
+  const date = Date.parse(new Date())
+
 
   const newArticle = new Article({
     title,
-    tags,
     writing,
-    // date,
+    date,
   });
 
   newArticle
@@ -26,7 +25,7 @@ router.route("/add").post((req, res) => {
     .catch((err) => res.status(400).json("Error : " + err));
 });
 
-router.route("/:id").get((req, res) => {
+router.route("/blog/:id").get((req, res) => {
   Article.findById(req.params.id)
     .then((article) => res.json(article))
     .catch((err) => res.status(400).json("Error: " + err));
@@ -42,9 +41,8 @@ router.route("/edit/:id").post((req, res) => {
   Article.findById(req.params.id)
     .then((article) => {
       article.title = req.body.title;
-      article.tags = req.body.tags;
       article.writing = req.body.writing;
-      // // article.date = Date.parse(req.body.date);
+      article.date = Date.parse(req.body.date);
 
       article
         .save()
