@@ -3,7 +3,7 @@ import { CardGrid } from "./card.component";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-class Blog extends React.Component {
+class Single extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -19,7 +19,7 @@ class Blog extends React.Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:8080/blog/" + this.props.match.params.id)
+      .get("http://localhost:8080/note/" + this.props.match.params.id)
       .then((res) => {
         this.setState({
           title: res.data.title,
@@ -105,11 +105,11 @@ class Blog extends React.Component {
         </a>
 
         <hr></hr>
-        <h3>More articles</h3>
+        <h3>Other notes</h3>
         <CardGrid />
       </div>
     );
   }
 }
 
-export { Blog };
+export { Single };

@@ -1,6 +1,5 @@
 import axios from "axios";
 import React from "react";
-import { Link } from "react-router-dom";
 
 class Add extends React.Component {
   constructor(props) {
@@ -29,13 +28,13 @@ class Add extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    const article = {
+    const note = {
       title: this.state.title,
       writing: this.state.writing,
     };
 
     axios
-      .post("http://localhost:8080/add", article)
+      .post("http://localhost:8080/add", note)
       .then((res) => alert("Succefully added"))
       .catch((err) => {
         console.log(err);

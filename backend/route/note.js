@@ -1,9 +1,9 @@
 const router = require("express").Router();
-let Article = require("../model/blog.model");
+let Note = require("../model/note.model");
 
 router.route("/").get((req, res) => {
-  Article.find()
-    .then((article) => res.json(article))
+  Note.find()
+    .then((note) => res.json(note))
     .catch((err) => res.status(400).json("Error : " + err));
 });
 
@@ -12,46 +12,46 @@ router.route("/add").post((req, res) => {
   const writing = req.body.writing;
   const date = Date.parse(new Date());
 
-  const newArticle = new Article({
+  const newNote = new Note({
     title,
     writing,
     date,
   });
 
-  newArticle
+  newNote
     .save()
-    .then(() => res.json("Article added!"))
+    .then(() => res.json("Note added!"))
     .catch((err) => res.status(400).json("Error : " + err));
 });
 
 router.route("/delete/:id").delete((req, res) => {
-  Article.findByIdAndDelete(req.params.id)
-    .then(() => res.json("Article deleted."))
+  Note.findByIdAndDelete(req.params.id)
+    .then(() => res.json("Note deleted."))
     .catch((err) => res.status(400).json("Error: " + err));
 });
 
-router.route("/blog/:id").get((req, res) => {
-  Article.findById(req.params.id)
-    .then((article) => res.json(article))
+router.route("/note/:id").get((req, res) => {
+  Note.findById(req.params.id)
+    .then((note) => res.json(note))
     .catch((err) => res.status(400).json("Error: " + err));
 });
 
 router.route("/edit/:id").get((req, res) => {
-  Article.findById(req.params.id)
-    .then((article) => res.json(article))
+  Note.findById(req.params.id)
+    .then((note) => res.json(note))
     .catch((err) => res.status(400).json("Error: " + err));
 });
 
 router.route("/edit/:id").post((req, res) => {
-  Article.findById(req.params.id)
-    .then((article) => {
-      article.title = req.body.title;
-      article.writing = req.body.writing;
-      article.date = Date.parse(req.body.date);
+  Note.findById(req.params.id)
+    .then((note) => {
+      note.title = req.body.title;
+      note.writing = req.body.writing;
+      note.date = Date.parse(req.body.date);
 
-      article
+      note
         .save()
-        .then(() => res.json("Article updated!"))
+        .then(() => res.json("Note updated!"))
         .catch((err) => res.status(400).json("Error: " + err));
     })
     .catch((err) => res.status(400).json("Error: " + err));

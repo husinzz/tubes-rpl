@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
@@ -6,12 +6,12 @@ const Card = (props) => {
   return (
     <div className="card">
       <div className="card-body">
-        <h5 className="card-title">{props.article.title}</h5>
-        <p className="card-text">{props.article.writing.substring(0, 15)}</p>
-        <Link to={"/blog/" + props.article._id} className="btn btn-primary">
+        <h5 className="card-title">{props.note.title}</h5>
+        <p className="card-text">{props.note.writing.substring(0, 15)}</p>
+        <Link to={"/note/" + props.note._id} className="btn btn-primary">
           Read more
         </Link>
-        <Link to={"/edit/" + props.article._id}></Link>
+        <Link to={"/edit/" + props.note._id}></Link>
       </div>
     </div>
   );
@@ -21,7 +21,7 @@ class CardGrid extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      article: [],
+      note: [],
     };
   }
 
@@ -30,7 +30,7 @@ class CardGrid extends React.Component {
       .get("http://localhost:8080/")
       .then((res) => {
         this.setState({
-          article: res.data,
+          note: res.data,
         });
       })
       .catch((error) => {
@@ -39,11 +39,11 @@ class CardGrid extends React.Component {
   }
 
   getCards() {
-    if (this.state.article.length !== 0) {
-      return this.state.article.map((currentCards) => {
+    if (this.state.note.length !== 0) {
+      return this.state.note.map((currentCards) => {
         return (
           <div className="col-md-4 col-sm-12 py-2">
-            <Card article={currentCards} key={currentCards._id} />
+            <Card note={currentCards} key={currentCards._id} />
           </div>
         );
       });

@@ -6,7 +6,7 @@ import "./App.css";
 // Components
 import Navigation from "./component/navigation.component";
 import { Dashboard } from "./component/dashboard.component";
-import { Blog } from "./component/singlepage.component";
+import { Single } from "./component/singlepage.component";
 import { Add } from "./component/add.component";
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
     <Router>
       <Navigation />
       <Route path="/" exact component={Dashboard} />
-      <Route path="/blog/:id" component={Blog} />
+      <Route path="/note/:id" component={Single} />
       <Route path="/add" component={Add} />
     </Router>
   );
