@@ -6,7 +6,7 @@ import "./App.css";
 // Components
 import Navigation from "./component/navigation.component";
 import { Dashboard } from "./component/dashboard.component";
-import { Blog } from "./component/blog.component";
+import { Blog } from "./component/singlepage.component";
 import { Add } from "./component/add.component";
 
 function App() {

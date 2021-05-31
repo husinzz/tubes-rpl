@@ -24,15 +24,21 @@ router.route("/add").post((req, res) => {
     .catch((err) => res.status(400).json("Error : " + err));
 });
 
+router.route("/delete/:id").delete((req, res) => {
+  Article.findByIdAndDelete(req.params.id)
+    .then(() => res.json("Article deleted."))
+    .catch((err) => res.status(400).json("Error: " + err));
+});
+
 router.route("/blog/:id").get((req, res) => {
   Article.findById(req.params.id)
     .then((article) => res.json(article))
     .catch((err) => res.status(400).json("Error: " + err));
 });
 
-router.route("/:id").delete((req, res) => {
-  Article.findByIdAndDelete(req.params.id)
-    .then(() => res.json("Article deleted."))
+router.route("/edit/:id").get((req, res) => {
+  Article.findById(req.params.id)
+    .then((article) => res.json(article))
     .catch((err) => res.status(400).json("Error: " + err));
 });
 

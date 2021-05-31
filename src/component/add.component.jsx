@@ -1,5 +1,6 @@
 import axios from "axios";
 import React from "react";
+import { Link } from "react-router-dom";
 
 class Add extends React.Component {
   constructor(props) {
@@ -35,7 +36,10 @@ class Add extends React.Component {
 
     axios
       .post("http://localhost:8080/add", article)
-      .then((res) => alert("Successfully added"));
+      .then((res) => alert("Succefully added"))
+      .catch((err) => {
+        console.log(err);
+      });
   }
 
   render() {

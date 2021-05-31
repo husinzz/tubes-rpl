@@ -11,6 +11,7 @@ const Card = (props) => {
         <Link to={"/blog/" + props.article._id} className="btn btn-primary">
           Read more
         </Link>
+        <Link to={"/edit/" + props.article._id}></Link>
       </div>
     </div>
   );
@@ -20,7 +21,7 @@ class CardGrid extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      article: undefined,
+      article: [],
     };
   }
 
@@ -38,7 +39,7 @@ class CardGrid extends React.Component {
   }
 
   getCards() {
-    if (this.state.article !== undefined) {
+    if (this.state.article.length !== 0) {
       return this.state.article.map((currentCards) => {
         return (
           <div className="col-md-4 col-sm-12 py-2">
@@ -47,7 +48,7 @@ class CardGrid extends React.Component {
         );
       });
     } else {
-      return "Nothing here";
+      return "No notes found";
     }
   }
 
