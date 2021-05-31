@@ -1,7 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 import { CardGrid } from "./card.component";
 import axios from "axios";
-import { Link } from "react-router-dom";
 
 class Single extends React.Component {
   constructor(props) {
