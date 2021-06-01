@@ -34,12 +34,8 @@ class Single extends React.Component {
   delete() {
     axios
       .delete("http://localhost:8080/delete/" + this.props.match.params.id)
-      .then((res) => {
-        this.setState({
-          title: "",
-          writing: "",
-          date: "",
-        });
+      .catch((err) => {
+        console.log(err);
       });
   }
 

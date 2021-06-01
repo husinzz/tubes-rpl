@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 // Component
-import { Search } from "./search.component";
 
 export default class Navigation extends React.Component {
   render() {
@@ -36,7 +35,6 @@ export default class Navigation extends React.Component {
                 </Link>
               </li>
             </ul>
-            <Search />
           </div>
         </div>
       </nav>
