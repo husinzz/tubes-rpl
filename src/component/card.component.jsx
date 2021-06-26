@@ -1,6 +1,5 @@
 import React from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
 
 const Card = (props) => {
   return (
@@ -8,10 +7,9 @@ const Card = (props) => {
       <div className="card-body">
         <h5 className="card-title">{props.note.title}</h5>
         <p className="card-text">{props.note.writing.substring(0, 15)}</p>
-        <Link to={"/note/" + props.note._id} className="btn btn-primary">
+        <a href={"/note/" + props.note._id} className="btn btn-primary">
           Read more
-        </Link>
-        <Link to={"/edit/" + props.note._id}></Link>
+        </a>
       </div>
     </div>
   );
